@@ -1,7 +1,6 @@
 {
   "name": "node1",
   "version": "1.0.0",
-  "description": "",
   "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +9,18 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "express": "^4.15.4"
-  }
+    "express": "^4.15.4",
+    "node-json-db": "^0.7.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrackCarmony/node-day-1.1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BrackCarmony/node-day-1.1/issues"
+  },
+  "homepage": "https://github.com/BrackCarmony/node-day-1.1#readme",
+  "keywords": [],
+  "description": ""
 }
