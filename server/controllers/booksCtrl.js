@@ -2,8 +2,10 @@ const JsonDB = require('node-json-db');
 const db = new JsonDB("myDataBase", true, false);
 
 try {
+  // Checks if the database has anything in books.
   db.getData('/books');
 }catch(err){
+  // If not save a default array of books into the database. 
   db.push('/books' , require('./../data/books'))
 }
 
@@ -25,16 +27,6 @@ module.exports = {
   },
   updateBook: function (req, res) {
     let books = db.getData('/books');
-    console.log(req.params.id);
-    // for (let i =0;i<books.length;i++){
-    //   if (books[i].id === req.params.id * 1){
-    //     // Edit book
-    //     Object.assign( books[i], req.body);
-    //     // Send book back to front end.
-    //     return res.send(books[i]);
-    //   }
-    // }
-
     let bookToEdit = books.find(book=>book.id=== req.params.id * 1)
     Object.assign(bookToEdit, req.body);
     db.push('/books' , books)
