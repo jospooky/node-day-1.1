@@ -4,11 +4,6 @@ const bodyParser = require('body-parser');
 const path = require('path')
 const port = 8080;
 
-
-app.use((req, res, next)=>{
-  console.log(req.url);
-  next();
-})
 app.use(express.static(`${__dirname}/../build`))
 app.use(bodyParser.json());
 
