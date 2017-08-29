@@ -40,10 +40,13 @@ app.put('/api/books/:id', (req, res)=>{
 });
 
 app.delete('/api/books/:id', (req, res)=>{
-  let bookToDelete = books.find((book)=>book.id === req.params.id * 1);
-  if (!bookToDelete){
+  let idToDelete = books.findIndex((book)=>book.id === req.params.id * 1);
+  if (idToDelete === -1){
     return res.status(404).send(`No book with id ${req.params.id} to delete`);
   }
+
+  let bookToDelete = books[idToDelete];
+  books.splice(i,1);
   res.send({
     message:`Deleteing book id ${req.params.id} (${bookToDelete.title})`,
     book:bookToDelete
