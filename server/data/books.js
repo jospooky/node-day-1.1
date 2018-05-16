@@ -16,6 +16,5 @@ module.exports = [
     author:'George Orwell',
     votes:0,
     id:3
-
   }
 ]
